@@ -18,7 +18,7 @@ if __name__ == "__main__":
     while i<=n:    
         file_name = conn.recv(1024).decode()
         print("%s"%file_name)
-        new_file=("/tmp/%s"%file_name)
+        new_file=("%s"%file_name)
         with open(new_file, "wb") as in_file :   
             print("File opened")
             print("Receiving data...")
@@ -31,7 +31,7 @@ if __name__ == "__main__":
 
         print("Compressing the file with Zip")
         new_file_name=file_name.split('.')[0]
-        zip_file=("/tmp/%s.zip"%new_file_name)
+        zip_file=("/%s.zip"%new_file_name)
 
         print(zip_file)
         with zipfile.ZipFile(zip_file,"w",compression= zipfile.ZIP_DEFLATED) as z:
