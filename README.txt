@@ -36,9 +36,9 @@ docker exec -it task3server bash
 #####running database docker in the system##########
 cp Dockerfile.Sysad.task3.db Dockerfile
 docker pull ghcr.io/ameyak04/sysadmtask3mydb:latest
-docker run -d -t --name postgresdbtask3 ghcr.io/ameyak04/sysadmtask3mydb:latest
+docker run -d -t --name mydbcontainer ghcr.io/ameyak04/sysadmtask3mydb:latest
 ##########to go into the root of docker##########
-docker exec -it postgresdbtask3 bash
+docker exec -it mydbcontainer bash
 
 #######to run docker-compose file#######
 docker compose -f docker-compose-sysadmtask3.yaml up -d ---> Very Important
