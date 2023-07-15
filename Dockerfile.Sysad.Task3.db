@@ -1,0 +1,4 @@
+FROM postgres:latest
+ENV POSTGRES_PASSWORD=mysecretpassword
+COPY ./inputfiles/cleansd.txt /tmp
+ADD ./scripts/postgrescreatetable.sql /docker-entrypoint-initdb.d/
