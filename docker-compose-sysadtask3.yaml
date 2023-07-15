@@ -1,0 +1,34 @@
+version: '2.18.1'
+services:
+      my-app:
+       image: ghcr.io/ameyak04/sysadmtask3myapp
+       tty: true
+       stdin_open: true
+       volumes:
+        - userdata:/data/Adore
+        - userdata:/data/Betsey
+        - userdata:/data/Carleen
+        - userdata:/data/Dodi
+        - userdata:/data/Dottie
+        - userdata:/data/Dynah
+        - userdata:/data/Elbertine
+        - userdata:/data/Gwenneth
+        - userdata:/data/Inga
+        - userdata:/data/Josephina
+        - userdata:/data/Kathryne
+        - userdata:/data/Laurel
+        - userdata:/data/Maribelle
+        - userdata:/data/Meris
+        - userdata:/data/Minnnie
+        - userdata:/data/Reyna
+        - userdata:/data/Selena
+        - userdata:/data/Teddy
+        - userdata:/data/Trenna
+        - userdata:/data/Trish
+      my-db:
+       image: ghcr.io/ameyak04/sysadmtask3mydb
+       container_name: mydbcontainer
+       ports:
+       - 5432:5432
+volumes:
+  userdata:
