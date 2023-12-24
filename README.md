@@ -4,12 +4,11 @@ We were given an image of the octagon at NITT. To gather more information about 
 
 ```bash
 zsteg chal.png
-
+```
 From the analysis, we obtained the following output:
 
 Inside the image, we discovered a zipfile. Upon extracting it, we obtained a directory named test containing multiple text files. Considering the hint from someone named Stella and the Octagon photo, we inferred that it referred to Stella’s Octangula Numbers. Utilizing this clue, we extracted all the text files that matched this sequence into a new directory using the following script:
-bash
-Copy code
+
 #!/bin/bash
 
 mkdir -p ../newdir
