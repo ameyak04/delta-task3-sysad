@@ -5,10 +5,12 @@ We were given an image of the octagon at NITT. To gather more information about 
 ```bash
 zsteg chal.png
 ```
+![first photo](Pictures/1.png)
+
 From the analysis, we obtained the following output:
 
 Inside the image, we discovered a zipfile. Upon extracting it, we obtained a directory named test containing multiple text files. Considering the hint from someone named Stella and the Octagon photo, we inferred that it referred to Stella’s Octangula Numbers. Utilizing this clue, we extracted all the text files that matched this sequence into a new directory using the following script:
-
+```
 #!/bin/bash
 
 mkdir -p ../newdir
@@ -25,10 +27,9 @@ do
  mv "$file" ../newdir
  fi
 done
-
+```
 Delving into the Environmental Conundrum and researching the peculiar headers of some text files, we discovered they were in the PPM (Portable Pix Map) image format. These headers contain details about the size and number of pixels in the image. Since only a few files had headers, we concluded that merging images was necessary for further progress.
-bash
-Copy code
+```
 #!/bin/bash
 
 # Store the sorted file names in a variable
@@ -39,12 +40,12 @@ for file in $file_list; do
  # Extract the second space-separated field of the second line from each file
  awk 'FNR==2 {print $2}' "$file"
 done
-
+```
 The output provided us with the number of images to be merged, in order:
+![second photo](Pictures/2.png)
 
 Upon further investigation and experimentation with merging, we discovered that there was only a need to append the text files. We used the following script to append them:
-bash
-Copy code
+```
 #!/bin/bash
 
 # Output of the command
@@ -77,8 +78,24 @@ for count in $output; do
  done
  ((start++))
 done
-
+```
 Executing this script will generate 8 .ppm images, leading us to the flag.
+
+![third photo](Pictures/3.png)
+
+![fourth photo](Pictures/4.png)
+
+![fifth photo](Pictures/5.png)
+
+![sixth photo](Pictures/6.png)
+
+![seventh photo](Pictures/7.png)
+
+![eighth photo](Pictures/8.png)
+
+![nineth photo](Pictures/9.png)
+
+![tenth photo](Pictures/10.png)
 
 
 
