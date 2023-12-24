@@ -9,7 +9,7 @@ zsteg chal.png
 
 From the analysis, we obtained the following output:
 
-Inside the image, we discovered a zipfile. Upon extracting it, we obtained a directory named test containing multiple text files. Considering the hint from someone named Stella and the Octagon photo, we inferred that it referred to Stella’s Octangula Numbers. Utilizing this clue, we extracted all the text files that matched this sequence into a new directory using the following script:
+Inside the image, we discovered a zipfile. Upon extracting it, we obtained a directory named test containing multiple text files. Considering the hint from someone named Stella and the Octagon photo, we inferred that it referred to **Stella Octangula Numbers**. Utilizing this clue, we extracted all the text files that matched this sequence into a new directory using the following script:
 ```
 #!/bin/bash
 
@@ -28,7 +28,7 @@ do
  fi
 done
 ```
-Delving into the Environmental Conundrum and researching the peculiar headers of some text files, we discovered they were in the PPM (Portable Pix Map) image format. These headers contain details about the size and number of pixels in the image. Since only a few files had headers, we concluded that merging images was necessary for further progress.
+Delving into the Environmental Conundrum and researching the peculiar headers of some text files, we discovered they were in the **PPM (Portable Pix Map)** image format. These headers contain details about the size and number of pixels in the image. Since only a few files had headers, we concluded that merging images was necessary for further progress.
 ```
 #!/bin/bash
 
